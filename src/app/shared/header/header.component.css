@@ -1,0 +1,48 @@
+header span.unioeste{
+    line-height: 25px;
+    vertical-align: middle;
+    font-size: 18px;
+    color: rgb(67, 50, 99);
+    padding: 0px;
+    margin: 0px;
+    right: auto;
+    left: 39px;
+    top: 2px;
+}
+
+header span.sistema{
+    line-height: 25px;
+    vertical-align: middle;
+    font-size: 18px;
+    color: rgb(176, 55, 93);
+    padding: 0px;
+    margin: 0px;
+    right: auto;
+    left: 115px;
+    top: 2px;
+}
+header {
+    border-bottom: 5px solid #157FCC;
+    padding: 5px;
+}
+.btn-margin{
+    margin-bottom: 10px;
+}
+.table th.fit {
+    white-space: nowrap;
+    width: 14%;
+}
+/**
+Zerando config de a com underline ao passar o mouse
+**/
+header a:hover{
+    text-decoration: none !important;
+}
+header a:active{
+    text-decoration: none !important;
+}
+header a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: auto;
+    text-decoration: none !important;
+}
