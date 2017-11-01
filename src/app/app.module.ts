@@ -1,3 +1,4 @@
+import { Configuration } from './app.constants';
 import { SharedModule } from './shared/shared.module';
 //import { FormaSelecaoModule } from './forma-selecao/forma-selecao.module';
 import { AppRoutingModule } from './app-routing.module';
@@ -22,7 +23,9 @@ import { HttpModule } from '@angular/http';
     SharedModule,
     HttpModule
   ],
-  providers: [],
+  providers: [
+    Configuration
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
