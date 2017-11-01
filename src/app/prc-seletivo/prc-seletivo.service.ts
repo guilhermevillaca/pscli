@@ -17,7 +17,8 @@ export class PrcSeletivoService {
 
   getProcessos(){
     return this.http.get(this.urlLocal)
-    .map(res=>res.json().data);
+    .map(res=>res.json().data)
+    .catch(this.handleError);
     /**
      * pode ser usado como abaixo. Só cuidar com imports.
      * .toPromise()

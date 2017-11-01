@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { Configuration } from './app.constants';
 import { SharedModule } from './shared/shared.module';
 //import { FormaSelecaoModule } from './forma-selecao/forma-selecao.module';
@@ -9,7 +10,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { FormaSelecaoModule } from './forma-selecao/forma-selecao.module';
 import { HttpModule } from '@angular/http';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,10 @@ import { HttpModule } from '@angular/http';
     AppRoutingModule,
     FormaSelecaoModule,
     SharedModule,
-    HttpModule
+    HttpModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule
   ],
   providers: [
     Configuration

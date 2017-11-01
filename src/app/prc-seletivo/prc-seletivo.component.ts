@@ -9,7 +9,7 @@ import { PrcSeletivoService } from './prc-seletivo.service';
   styleUrls: ['./prc-seletivo.component.css']
 })
 export class PrcSeletivoComponent implements OnInit { 
-  prcSeletivo: any[];
+  prcSeletivo: PrcSeletivo[];
   teste;
   constructor(private prcSeletivoService: PrcSeletivoService) {}
   
@@ -20,8 +20,7 @@ export class PrcSeletivoComponent implements OnInit {
   getPrc() {
     this.prcSeletivoService.getProcessos()
     .subscribe(data => {      
-      this.prcSeletivo = data;
-      console.log(this.prcSeletivo);      
+      this.prcSeletivo = data;      
     });
     /**
      * pode ser usado then que vai funcionar igual. no service tb há mudanças. ver comentários lá.

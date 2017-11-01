@@ -1,0 +1,91 @@
+<form class="form-horizontal" [formGroup]="formulario" (ngSubmit)="onSubmit()">
+
+  <div class="form-group" [ngClass]="aplicaCssErro('prcSltCodigo')">
+    <div class="col-md-12">
+      <label for="prcSltCodigo" class="control-label">Código</label>
+    </div>
+    <div class="col-md-12">
+      <input type="text" class="form-control" id="prcSltCodigo" placeholder="Código" formControlName="prcSltCodigo">
+      <!--app-campo-control-erro [mostrarErro]="verificaValidTouched('nome')" msgErro="Nome é obrigatório"></app-campo-control-erro-->
+    </div>
+  </div>
+
+  <div class="form-group" [ngClass]="aplicaCssErro('prcSltDescricao')">
+    <div class="col-md-12">
+      <label for="prcSltDescricao" class="control-label">Descrição</label>
+    </div>
+    <div class="col-md-12">
+      <input type="text" class="form-control" id="prcSltDescricao" placeholder="Descrição" formControlName="prcSltDescricao">
+    </div>
+  </div>
+
+  <div class="form-group" [ngClass]="aplicaCssErro('prcSltNmrConvenio')">
+    <div class="col-md-12">
+      <label for="prcSltNmrConvenio" class="control-label">Convênio</label>
+    </div>
+    <div class="col-md-12">
+      <input type="text" class="form-control" id="prcSltNmrConvenio" placeholder="Convênio" formControlName="prcSltNmrConvenio">
+    </div>
+  </div>
+
+  <div class="form-group" [ngClass]="aplicaCssErro('prcSltNmrCnvEletronico')">
+    <div class="col-md-12">
+      <label for="prcSltNmrCnvEletronico" class="control-label">Número Convênio Eletrônico</label>
+    </div>
+    <div class="col-md-12">
+      <input type="text" class="form-control" id="prcSltNmrCnvEletronico" placeholder="Número Convênio Eletrônico" formControlName="prcSltNmrCnvEletronico">
+    </div>
+  </div>
+
+  <div class="form-group" [ngClass]="aplicaCssErro('prcSltBltDtEmissao')">
+    <div class="col-md-12">
+      <label for="prcSltBltDtEmissao" class="control-label">Boleto Data Emissão</label>
+    </div>
+    <div class="col-md-12">
+      <input type="text" class="form-control" id="prcSltBltDtEmissao" placeholder="Boleto Data Emissão" formControlName="prcSltBltDtEmissao">
+    </div>
+  </div>
+
+  <div class="form-group" [ngClass]="aplicaCssErro('prcSltBltDtVencimento')">
+    <div class="col-md-12">
+      <label for="prcSltBltDtVencimento" class="control-label">Boleto Data Vencimento</label>
+    </div>
+    <div class="col-md-12">
+      <input type="text" class="form-control" id="prcSltBltDtVencimento" placeholder="Boleto Data Vencimento" formControlName="prcSltBltDtVencimento">
+    </div>
+  </div>
+
+  <div class="form-group" [ngClass]="aplicaCssErro('prcSltDtHrTrmReimpressao')">
+    <div class="col-md-12">
+      <label for="prcSltDtHrTrmReimpressao" class="control-label">Término Reimpressão</label>
+    </div>
+    <div class="col-md-12">
+      <input type="text" class="form-control" id="prcSltDtHrTrmReimpressao" placeholder="Término Reimpressão" formControlName="prcSltDtHrTrmReimpressao">
+    </div>
+  </div>
+
+
+  <div class="form-group" [ngClass]="aplicaCssErro('prcSltDtHrTrmInscricao')">
+    <div class="col-md-12">
+      <label for="prcSltDtHrTrmInscricao" class="control-label">Término Inscrição</label>
+    </div>
+    <div class="col-md-12">
+      <input type="text" class="form-control" id="prcSltDtHrTrmInscricao" placeholder="Término Inscrição" formControlName="prcSltDtHrTrmInscricao">
+    </div>
+  </div>
+
+
+  <div class="form-group" [ngClass]="aplicaCssErro('mncCdgSede')">
+    <div class="col-md-12">
+      <label for="mncCdgSede" class="control-label">Código Municipio Sede</label>
+    </div>
+    <div class="col-md-12">
+      <input type="text" class="form-control" id="mncCdgSede" placeholder="Código Municipio Sede" formControlName="mncCdgSede">
+    </div>
+  </div>
+
+  <button class="btn btn-primary">Salvar</button>
+  <button class="btn btn-danger" (click)="resetar()">Cancelar</button>
+  <button class="btn btn-info" routerLink="../../prcSeletivo">Voltar</button>
+
+</form>
