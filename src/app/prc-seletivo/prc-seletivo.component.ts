@@ -9,8 +9,8 @@ import { PrcSeletivoService } from './prc-seletivo.service';
   styleUrls: ['./prc-seletivo.component.css']
 })
 export class PrcSeletivoComponent implements OnInit { 
-  prcSeletivo: Array<any[]>;
-
+  prcSeletivo: any[];
+  teste;
   constructor(private prcSeletivoService: PrcSeletivoService) {}
   
   ngOnInit() {
@@ -19,8 +19,14 @@ export class PrcSeletivoComponent implements OnInit {
 
   getPrc() {
     this.prcSeletivoService.getProcessos()
-    .subscribe(data => this.prcSeletivo = data);
-    console.log(this.prcSeletivo);
+    .subscribe(data => {      
+      this.prcSeletivo = data;
+      console.log(this.prcSeletivo);      
+    });
+    /**
+     * pode ser usado then que vai funcionar igual. no service tb há mudanças. ver comentários lá.
+     * .then(data=> this.prcSeletivo = data)
+     */
   }
 }
 

@@ -10,13 +10,20 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class PrcSeletivoService {
   private urlLocal: string;
+  
   constructor(private http: Http, private _configuration: Configuration) {
     this.urlLocal = this._configuration.ServerUrl + 'prcSeletivo/listaProcessos';
   }
 
   getProcessos(){
     return this.http.get(this.urlLocal)
-      .map((response: Response) => response.json());
+    .map(res=>res.json().data);
+    /**
+     * pode ser usado como abaixo. Só cuidar com imports.
+     * .toPromise()
+     * .then(res => res.json().data)
+     */
+      
   }
 
   private handleError(error: Response) {

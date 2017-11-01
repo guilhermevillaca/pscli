@@ -7,6 +7,10 @@
   <br>
   <br>
   <div class="table-responsive">
+    <pre>
+     {{prcSeletivo | json}}
+    </pre>
+
 
     <table class="table table-bordered">
       <thead>
@@ -18,31 +22,10 @@
         </tr>
       </thead>
       <tbody>
-        <!--tr *ngFor="let processo of processos">
-          {{processo}}
-        </tr-->
-        <tr>
-          <th scope=row>1</th>
-          <td>Mark</td>
-          <td>@mdo</td>
-          <td>
-            <button class="btn btn-primary">Editar</button>
-            <button class="btn btn-danger">Excluir</button>
-          </td>
-        </tr>
-        <tr>
-          <th scope=row>2</th>
-          <td>Jacob</td>
-          <td>@fat</td>
-          <td>
-            <button class="btn btn-primary">Editar</button>
-            <button class="btn btn-danger">Excluir</button>
-          </td>
-        </tr>
-        <tr>
-          <th scope=row>3</th>
-          <td>Larry</td>
-          <td>the Bird</td>
+        <tr *ngFor="let processo of prcSeletivo">
+          <th scope="row">{{processo.prcSltCodigo}}</th>
+          <td>{{processo.prcSltDescricao}}</td>
+          <td>{{processo.prcSltNmrConvenio}}</td>
           <td>
             <button class="btn btn-primary">Editar</button>
             <button class="btn btn-danger">Excluir</button>
