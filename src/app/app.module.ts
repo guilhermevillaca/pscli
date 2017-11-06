@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { FormaSelecaoModule } from './forma-selecao/forma-selecao.module';
 import { HttpModule } from '@angular/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HttpModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
+    HttpClientModule,
   ],
   providers: [
     Configuration
