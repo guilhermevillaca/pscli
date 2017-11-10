@@ -1,25 +1,45 @@
 import { Configuration } from './../app.constants';
 import { PrcSeletivo } from './prc-seletivo.models';
-import { Http, Response } from '@angular/http';
-import {HttpClient} from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
+import { convertToParamMap } from '@angular/router';
+import * as $ from 'jquery/dist/jquery.min.js';
+
 @Injectable()
 export class PrcSeletivoService {
   private urlLocal: string;
-
-  constructor(private http: HttpClient, private _configuration: Configuration) {
+  private urlSave: string;
+  private urlGetById: string;
+  constructor(private _httpClient: HttpClient, private _configuration: Configuration) {
     this.urlLocal = this._configuration.ServerUrl + 'prcSeletivo/listaProcessos';
+    this.urlSave = this._configuration.ServerUrl + 'prcSeletivo/salvar';
+    this.urlGetById = this._configuration.ServerUrl + 'prcSeletivo/getById/';
   }
 
   getProcessos() {
-    return this.http.get(this.urlLocal).toPromise();
+    return this._httpClient.get(this.urlLocal).toPromise();
   }
 
-  private handleError(error: Response) {
-    console.error(error);
-    return Observable.throw(error.json().error || 'Server error');
+  save(processo: PrcSeletivo) { 
+    console.log(processo);     
+    console.log(this.urlSave);
+          
+    let req = this._httpClient.post(this.urlSave, $.param(processo.toJSON()), {
+      headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded'),
+    });
+    req.subscribe(
+      response => {
+        console.log(response);
+      },
+      error => {
+        console.log(error);
+      }
+    );
   }
 
+  getById(prcSltCodigo){
+    return this._httpClient.get(this.urlGetById+prcSltCodigo).toPromise();
+  }
 
 }

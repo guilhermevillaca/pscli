@@ -1,11 +1,48 @@
-export interface PrcSeletivo {
+import { DatePipe } from '@angular/common';
+export class PrcSeletivo {
     prcSltCodigo: number;
     prcSltDescricao: string;
     prcSltNmrConvenio: string;
     prcSltNmrCnvEletronico: string;
-    prcSltBltDtEmissao: Date;
-    prcSltBltDtVencimento: Date; 
-    prcSltDtHrTrmReimpressao: Date;
-    prcSltDtHrTrmInscricao: Date;
+    prcSltBltDtEmissao: string;//Date
+    prcSltBltDtVencimento: string; //Date
+    prcSltDtHrTrmReimpressao: string;//Date
+    prcSltDtHrTrmInscricao: string;//Date
     mncCdgSede: number;
+    
+    //constructor(private datePipe: DatePipe) {}
+    public initJSON(json: any): PrcSeletivo {
+        this.prcSltCodigo             = json.prcSltCodigo;
+        this.prcSltDescricao          = json.prcSltDescricao;
+        this.prcSltNmrConvenio        = json.prcSltNmrConvenio;
+        this.prcSltNmrCnvEletronico   = json.prcSltNmrCnvEletronico;
+        this.prcSltBltDtEmissao       = this.toDate(json.prcSltBltDtEmissao);
+        this.prcSltBltDtVencimento    = this.toDate(json.prcSltBltDtVencimento);
+        this.prcSltDtHrTrmReimpressao = this.toDate(json.prcSltDtHrTrmReimpressao);
+        this.prcSltDtHrTrmInscricao   = this.toDate(json.prcSltDtHrTrmInscricao);
+        this.mncCdgSede               = json.mncCdgSede;
+        return this;
+    }
+
+    public toJSON(){
+        return {
+            'prcSeletivo.prcSltCodigo'             : this.prcSltCodigo,
+            'prcSeletivo.prcSltDescricao'          : this.prcSltDescricao,
+            'prcSeletivo.prcSltNmrConvenio'        : this.prcSltNmrConvenio,
+            'prcSeletivo.prcSltNmrCnvEletronico'   : this.prcSltNmrCnvEletronico,
+            'prcSeletivo.prcSltBltDtEmissao'       : this.prcSltBltDtEmissao,
+            'prcSeletivo.prcSltBltDtVencimento'    : this.prcSltBltDtVencimento,
+            'prcSeletivo.prcSltDtHrTrmReimpressao' : this.prcSltDtHrTrmReimpressao,
+            'prcSeletivo.prcSltDtHrTrmInscricao'   : this.prcSltDtHrTrmInscricao,
+            'prcSeletivo.mncCdgSede'               : this.mncCdgSede
+        }
+    }
+
+    public toDate(date){
+        let datePipe: DatePipe = new DatePipe('pt-PT');        
+        let d = datePipe.transform(date, 'dd/MM/yyyy');  
+        let dt = new Date(d);
+        console.log(dt);          
+        return d;    
+    }
 }

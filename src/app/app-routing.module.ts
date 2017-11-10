@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: 'formaSelecao', component: FormaSelecaoComponent},  
   { path: 'prcSeletivo', component: PrcSeletivoComponent },
   { path: 'prcSeletivo/novo', component: PrcSeletivoFormComponent},  
+  { path: 'prcSeletivo/editar/:prcSltCodigo', component: PrcSeletivoFormComponent},  
   { path: '', pathMatch: 'full', redirectTo: 'formaSelecao' }
 ];
 

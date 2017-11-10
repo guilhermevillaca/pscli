@@ -7,9 +7,9 @@
   <br>
   <br>
   <div class="table-responsive">
-    <pre>
+    <!--pre>
      {{prcSeletivo | json}}
-    </pre>
+    </pre-->
 
 
     <table class="table table-bordered">
@@ -27,7 +27,7 @@
           <td>{{processo.prcSltDescricao}}</td>
           <td>{{processo.prcSltNmrConvenio}}</td>
           <td>
-            <button class="btn btn-primary">Editar</button>
+            <a class="btn btn-primary" routerLink="editar/{{processo.prcSltCodigo}}">Editar</a>
             <button class="btn btn-danger">Excluir</button>
           </td>
         </tr>

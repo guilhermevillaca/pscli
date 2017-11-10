@@ -10,16 +10,16 @@ import { PrcSeletivoService } from './prc-seletivo.service';
 })
 export class PrcSeletivoComponent implements OnInit {
   prcSeletivo: PrcSeletivo[];
-  constructor(private prcSeletivoService: PrcSeletivoService) { }
+  constructor(private _prcSeletivoService: PrcSeletivoService) { }
 
   ngOnInit() {
     this.getPrc();
   }
 
   getPrc() {
-    this.prcSeletivoService.getProcessos()
-      .then(data => {
-        this.prcSeletivo = data['data'];
+    this._prcSeletivoService.getProcessos()
+      .then(result => {
+        this.prcSeletivo = result['data'];
       });
   }
 }
