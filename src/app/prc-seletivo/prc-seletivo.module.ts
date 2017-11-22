@@ -5,12 +5,14 @@ import { PrcSeletivoService } from './prc-seletivo.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PrcSeletivoFormComponent } from './prc-seletivo-form/prc-seletivo-form.component';
+import { MyDatePickerModule } from 'mydatepicker';
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    MyDatePickerModule
   ],
   declarations: [
     PrcSeletivoComponent,

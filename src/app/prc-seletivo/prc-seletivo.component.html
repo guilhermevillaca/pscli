@@ -28,7 +28,7 @@
           <td>{{processo.prcSltNmrConvenio}}</td>
           <td>
             <a class="btn btn-primary" routerLink="editar/{{processo.prcSltCodigo}}">Editar</a>
-            <button class="btn btn-danger">Excluir</button>
+            <button class="btn btn-danger" (click)="remove(processo.prcSltCodigo)">Excluir</button>
           </td>
         </tr>
       </tbody>

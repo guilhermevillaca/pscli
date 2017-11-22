@@ -22,6 +22,15 @@ export class PrcSeletivoComponent implements OnInit {
         this.prcSeletivo = result['data'];
       });
   }
+
+  remove(prcSltCodigo){
+    this._prcSeletivoService.remove(prcSltCodigo).then(
+      result => {
+        //se ocorrer td bem a exclusão foi um sucesso. então chama o método para recarregar o grid.
+        this.getPrc();
+      }
+    );
+  }
 }
 
 

@@ -30,10 +30,10 @@ export class PrcSeletivo {
             'prcSeletivo.prcSltDescricao'          : this.prcSltDescricao,
             'prcSeletivo.prcSltNmrConvenio'        : this.prcSltNmrConvenio,
             'prcSeletivo.prcSltNmrCnvEletronico'   : this.prcSltNmrCnvEletronico,
-            'prcSeletivo.prcSltBltDtEmissao'       : this.prcSltBltDtEmissao,
-            'prcSeletivo.prcSltBltDtVencimento'    : this.prcSltBltDtVencimento,
-            'prcSeletivo.prcSltDtHrTrmReimpressao' : this.prcSltDtHrTrmReimpressao,
-            'prcSeletivo.prcSltDtHrTrmInscricao'   : this.prcSltDtHrTrmInscricao,
+            'prcSeletivo.prcSltBltDtEmissao'       : this.prcSltBltDtEmissao['formatted'],
+            'prcSeletivo.prcSltBltDtVencimento'    : this.prcSltBltDtVencimento['formatted'],
+            'prcSeletivo.prcSltDtHrTrmReimpressao' : this.prcSltDtHrTrmReimpressao['formatted'],
+            'prcSeletivo.prcSltDtHrTrmInscricao'   : this.prcSltDtHrTrmInscricao['formatted'],
             'prcSeletivo.mncCdgSede'               : this.mncCdgSede
         }
     }
@@ -41,8 +41,7 @@ export class PrcSeletivo {
     public toDate(date){
         let datePipe: DatePipe = new DatePipe('pt-PT');        
         let d = datePipe.transform(date, 'dd/MM/yyyy');  
-        let dt = new Date(d);
-        console.log(dt);          
-        return d;    
+        let dt = new Date(d);         
+        return date;    
     }
 }

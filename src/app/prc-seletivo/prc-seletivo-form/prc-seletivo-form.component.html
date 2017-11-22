@@ -1,10 +1,4 @@
 <h3>{{formTitle}}</h3>
-<script>
-  $(function () {
-    console.log('teste');
-    $("#prcSltBltDtEmissao").datepicker();
-  });
-</script>
 <form #formulario="ngForm" class="form-horizontal" (ngSubmit)="onSubmit(processo)">
 
   <div class="form-group" [ngClass]="aplicaCssErro('prcSltDescricao')">
@@ -42,26 +36,26 @@
 
     <div class="col-md-3" [ngClass]="aplicaCssErro('prcSltBltDtEmissao')">
       <label for="prcSltBltDtEmissao" class="control-label">Boleto Data Emissão</label>
-      <input type="text" class="form-control" id="prcSltBltDtEmissao" placeholder="Boleto Data Emissão" [(ngModel)]="processo.prcSltBltDtEmissao"
-        name="prcSltBltDtEmissao" required>
+      <my-date-picker placeholder="Boleto Data Emissão" name="prcSltBltDtEmissao" [options]="datePickerOptions" [locale]="fr" id="prcSltBltDtEmissao"
+        [(ngModel)]="processo.prcSltBltDtEmissao" required></my-date-picker>
     </div>
 
     <div class="col-md-3" [ngClass]="aplicaCssErro('prcSltBltDtVencimento')">
       <label for="prcSltBltDtVencimento" class="control-label">Boleto Data Vencimento</label>
-      <input type="text" class="form-control" id="prcSltBltDtVencimento" placeholder="Boleto Data Vencimento" [(ngModel)]="processo.prcSltBltDtVencimento"
-        name="prcSltBltDtVencimento" required>
+      <my-date-picker placeholder="Boleto Data Vencimento" name="prcSltBltDtVencimento" [options]="datePickerOptions" [locale]="pt-br" id="prcSltBltDtVencimento"
+        [(ngModel)]="processo.prcSltBltDtVencimento" required></my-date-picker>
     </div>
 
     <div class="col-md-3" [ngClass]="aplicaCssErro('prcSltDtHrTrmReimpressao')">
       <label for="prcSltDtHrTrmReimpressao" class="control-label">Boleto Data Reimpressão</label>
-      <input type="text" class="form-control" id="prcSltDtHrTrmReimpressao" placeholder="Boleto Data Vencimento" [(ngModel)]="processo.prcSltDtHrTrmReimpressao"
-        name="prcSltDtHrTrmReimpressao" required>
+      <my-date-picker placeholder="Boleto Data Vencimento" name="prcSltDtHrTrmReimpressao" [options]="datePickerOptions" id="prcSltDtHrTrmReimpressao"
+        [(ngModel)]="processo.prcSltDtHrTrmReimpressao" required></my-date-picker>
     </div>
 
     <div class="col-md-3" [ngClass]="aplicaCssErro('prcSltDtHrTrmInscricao')">
       <label for="prcSltDtHrTrmInscricao" class="control-label">Término Inscrição</label>
-      <input type="text" class="form-control" id="prcSltDtHrTrmInscricao" placeholder="Término Inscrição" [(ngModel)]="processo.prcSltDtHrTrmInscricao"
-        name="prcSltDtHrTrmInscricao" required>
+      <my-date-picker placeholder="Término Inscrição" name="prcSltDtHrTrmInscricao" [options]="datePickerOptions" id="prcSltDtHrTrmInscricao"
+        [(ngModel)]="processo.prcSltDtHrTrmInscricao" required></my-date-picker>
     </div>
 
   </div>
@@ -78,6 +72,6 @@
 
   <button class="btn btn-primary">Salvar</button>
   <!--button class="btn btn-danger" (click)="resetar()">Cancelar</button-->
-  <button class="btn btn-info" routerLink="/">Voltar</button>
+  <button class="btn btn-info" routerLink="/prcSeletivo">Voltar</button>
 
 </form>

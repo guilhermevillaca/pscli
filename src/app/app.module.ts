@@ -13,6 +13,7 @@ import { FormaSelecaoModule } from './forma-selecao/forma-selecao.module';
 import { HttpModule } from '@angular/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { MyDatePickerModule } from 'mydatepicker';
 registerLocaleData(localePtPt);
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ registerLocaleData(localePtPt);
     ReactiveFormsModule,
     RouterModule,
     HttpClientModule,
+    MyDatePickerModule 
   ],
   providers: [
     Configuration

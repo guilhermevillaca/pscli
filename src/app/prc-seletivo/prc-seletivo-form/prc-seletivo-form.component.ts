@@ -1,8 +1,9 @@
 import { PrcSeletivo } from './../prc-seletivo.models';
 import { PrcSeletivoService } from './../prc-seletivo.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { IMyDpOptions } from 'mydatepicker';
 
 @Component({
   selector: 'app-prc-seletivo-form',
@@ -13,9 +14,14 @@ export class PrcSeletivoFormComponent implements OnInit {
   formTitle = 'Cadastro novo Processo';
   processo: PrcSeletivo;
 
-  constructor(private _prcSeletivoService: PrcSeletivoService, private _route: ActivatedRoute) {
+  constructor(private _prcSeletivoService: PrcSeletivoService, private _route: ActivatedRoute, private elementRef: ElementRef) {
     this.processo = new PrcSeletivo();
   }
+
+  public datePickerOptions: IMyDpOptions = {
+    // other options...
+    dateFormat: 'dd/mm/yyyy'
+  };
 
   ngOnInit() {
     this._route.params.subscribe(params => {
@@ -26,6 +32,17 @@ export class PrcSeletivoFormComponent implements OnInit {
           });
       }
     });
+    /*let s = document.createElement("script");
+    s.type = "text/javascript";
+    s.text = `
+    $(function () {      
+      //$("#prcSltBltDtEmissao").datepicker();
+      $("#prcSltBltDtVencimento").datepicker();
+      $("#prcSltDtHrTrmReimpressao").datepicker();
+      $("#prcSltDtHrTrmInscricao").datepicker();
+    });
+    `;
+    this.elementRef.nativeElement.appendChild(s);*/
   }
 
   onSubmit(processo: PrcSeletivo) {

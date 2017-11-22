@@ -11,10 +11,12 @@ export class PrcSeletivoService {
   private urlLocal: string;
   private urlSave: string;
   private urlGetById: string;
+  private urlRemove: string;
   constructor(private _httpClient: HttpClient, private _configuration: Configuration) {
     this.urlLocal = this._configuration.ServerUrl + 'prcSeletivo/listaProcessos';
     this.urlSave = this._configuration.ServerUrl + 'prcSeletivo/salvar';
     this.urlGetById = this._configuration.ServerUrl + 'prcSeletivo/getById/';
+    this.urlRemove = this._configuration.ServerUrl + 'prcSeletivo/remove/';
   }
 
   getProcessos() {
@@ -22,9 +24,7 @@ export class PrcSeletivoService {
   }
 
   save(processo: PrcSeletivo) { 
-    console.log(processo);     
-    console.log(this.urlSave);
-          
+    console.log(processo);         
     let req = this._httpClient.post(this.urlSave, $.param(processo.toJSON()), {
       headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded'),
     });
@@ -40,6 +40,10 @@ export class PrcSeletivoService {
 
   getById(prcSltCodigo){
     return this._httpClient.get(this.urlGetById+prcSltCodigo).toPromise();
+  }
+
+  remove(prcSltCodigo){
+    return this._httpClient.delete(this.urlRemove+prcSltCodigo).toPromise();
   }
 
 }
