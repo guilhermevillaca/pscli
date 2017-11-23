@@ -1,4 +1,4 @@
-import { PrcSeletivo } from './prc-seletivo.models';
+import { PrcSeletivo } from '../models/prc-seletivo.models';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from "rxjs";
 import { PrcSeletivoService } from './prc-seletivo.service';

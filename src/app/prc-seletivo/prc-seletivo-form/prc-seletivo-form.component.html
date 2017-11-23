@@ -1,3 +1,11 @@
+<div class="menu">
+  <ul class="nav nav-tabs">
+    <li role="presentation">
+      <a routerLink="">Lista Inscritos</a>
+    </li>    
+  </ul>
+</div>
+
 <h3>{{formTitle}}</h3>
 <form #formulario="ngForm" class="form-horizontal" (ngSubmit)="onSubmit(processo)">
 
@@ -36,26 +44,26 @@
 
     <div class="col-md-3" [ngClass]="aplicaCssErro('prcSltBltDtEmissao')">
       <label for="prcSltBltDtEmissao" class="control-label">Boleto Data Emissão</label>
-      <my-date-picker placeholder="Boleto Data Emissão" name="prcSltBltDtEmissao" [options]="datePickerOptions" [locale]="fr" id="prcSltBltDtEmissao"
-        [(ngModel)]="processo.prcSltBltDtEmissao" required></my-date-picker>
+      <my-date-picker placeholder="Boleto Data Emissão" name="prcSltBltDtEmissao" [options]="datePickerOptions" locale="pt-br"
+        id="prcSltBltDtEmissao" [(ngModel)]="processo.prcSltBltDtEmissao" required></my-date-picker>
     </div>
 
     <div class="col-md-3" [ngClass]="aplicaCssErro('prcSltBltDtVencimento')">
       <label for="prcSltBltDtVencimento" class="control-label">Boleto Data Vencimento</label>
-      <my-date-picker placeholder="Boleto Data Vencimento" name="prcSltBltDtVencimento" [options]="datePickerOptions" [locale]="pt-br" id="prcSltBltDtVencimento"
-        [(ngModel)]="processo.prcSltBltDtVencimento" required></my-date-picker>
+      <my-date-picker placeholder="Boleto Data Vencimento" name="prcSltBltDtVencimento" [options]="datePickerOptions" locale="pt-br"
+        id="prcSltBltDtVencimento" [(ngModel)]="processo.prcSltBltDtVencimento" required></my-date-picker>
     </div>
 
     <div class="col-md-3" [ngClass]="aplicaCssErro('prcSltDtHrTrmReimpressao')">
       <label for="prcSltDtHrTrmReimpressao" class="control-label">Boleto Data Reimpressão</label>
-      <my-date-picker placeholder="Boleto Data Vencimento" name="prcSltDtHrTrmReimpressao" [options]="datePickerOptions" id="prcSltDtHrTrmReimpressao"
-        [(ngModel)]="processo.prcSltDtHrTrmReimpressao" required></my-date-picker>
+      <my-date-picker placeholder="Boleto Data Vencimento" name="prcSltDtHrTrmReimpressao" [options]="datePickerOptions" locale="pt-br"
+        id="prcSltDtHrTrmReimpressao" [(ngModel)]="processo.prcSltDtHrTrmReimpressao" required></my-date-picker>
     </div>
 
     <div class="col-md-3" [ngClass]="aplicaCssErro('prcSltDtHrTrmInscricao')">
       <label for="prcSltDtHrTrmInscricao" class="control-label">Término Inscrição</label>
-      <my-date-picker placeholder="Término Inscrição" name="prcSltDtHrTrmInscricao" [options]="datePickerOptions" id="prcSltDtHrTrmInscricao"
-        [(ngModel)]="processo.prcSltDtHrTrmInscricao" required></my-date-picker>
+      <my-date-picker placeholder="Término Inscrição" name="prcSltDtHrTrmInscricao" [options]="datePickerOptions" locale="pt-br"
+        id="prcSltDtHrTrmInscricao" [(ngModel)]="processo.prcSltDtHrTrmInscricao" required></my-date-picker>
     </div>
 
   </div>

@@ -14,6 +14,8 @@ import { HttpModule } from '@angular/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { MyDatePickerModule } from 'mydatepicker';
+import { InscricaoComponent } from './inscricao/inscricao.component';
+import { InscricaoModule } from './inscricao/inscricao.module';
 registerLocaleData(localePtPt);
 @NgModule({
   declarations: [
@@ -22,6 +24,7 @@ registerLocaleData(localePtPt);
   imports: [
     BrowserModule,
     PrcSeletivoModule,
+    InscricaoModule,
     AppRoutingModule,
     FormaSelecaoModule,
     SharedModule,

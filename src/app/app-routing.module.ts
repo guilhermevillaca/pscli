@@ -1,3 +1,4 @@
+import { InscricaoComponent } from './inscricao/inscricao.component';
 import { PrcSeletivoFormComponent } from './prc-seletivo/prc-seletivo-form/prc-seletivo-form.component';
 import { FormaSelecaoComponent } from './forma-selecao/forma-selecao.component';
 import { PrcSeletivoComponent } from './prc-seletivo/prc-seletivo.component';
@@ -9,7 +10,8 @@ const routes: Routes = [
   { path: 'prcSeletivo', component: PrcSeletivoComponent },
   { path: 'prcSeletivo/novo', component: PrcSeletivoFormComponent},  
   { path: 'prcSeletivo/editar/:prcSltCodigo', component: PrcSeletivoFormComponent},  
-  { path: '', pathMatch: 'full', redirectTo: 'formaSelecao' }
+  { path: '', pathMatch: 'full', redirectTo: 'formaSelecao' },
+  { path: 'inscricao', component: InscricaoComponent}
 ];
 
 @NgModule({

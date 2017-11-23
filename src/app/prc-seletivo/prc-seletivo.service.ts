@@ -1,5 +1,5 @@
 import { Configuration } from './../app.constants';
-import { PrcSeletivo } from './prc-seletivo.models';
+import { PrcSeletivo } from '../models/prc-seletivo.models';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
@@ -24,7 +24,7 @@ export class PrcSeletivoService {
   }
 
   save(processo: PrcSeletivo) { 
-    console.log(processo);         
+    //console.log(processo);         
     let req = this._httpClient.post(this.urlSave, $.param(processo.toJSON()), {
       headers: new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded'),
     });
