@@ -9,7 +9,8 @@ import { PrcSeletivoService } from './prc-seletivo.service';
   styleUrls: ['./prc-seletivo.component.css']
 })
 export class PrcSeletivoComponent implements OnInit {
-  prcSeletivo: PrcSeletivo[];
+  prcSeletivo: PrcSeletivo[] = [];
+  loading: boolean = true;
   constructor(private _prcSeletivoService: PrcSeletivoService) { }
 
   ngOnInit() {
@@ -20,10 +21,13 @@ export class PrcSeletivoComponent implements OnInit {
     this._prcSeletivoService.getProcessos()
       .then(result => {
         this.prcSeletivo = result['data'];
+        if (this.prcSeletivo.length > 0) {
+          this.loading = false;
+        }
       });
   }
 
-  remove(prcSltCodigo){
+  remove(prcSltCodigo) {
     this._prcSeletivoService.remove(prcSltCodigo).then(
       result => {
         //se ocorrer td bem a exclusão foi um sucesso. então chama o método para recarregar o grid.

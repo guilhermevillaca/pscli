@@ -1,0 +1,8 @@
+.loading{
+    background: url('assets/img/loading.gif');
+    background-repeat: no-repeat;
+    background-size: 40px;
+    width: 40px;
+    height: 45px;
+    margin: 0 auto;
+}

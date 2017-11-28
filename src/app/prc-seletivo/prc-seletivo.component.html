@@ -11,8 +11,12 @@
      {{prcSeletivo | json}}
     </pre-->
 
+    <div class="loading" *ngIf="loading"></div>
+    <h4 *ngIf="prcSeletivo.length == 0">
+      Não há processos seletivos cadastrados
+    </h4>
 
-    <table class="table table-bordered">
+    <table class="table table-bordered" *ngIf="prcSeletivo.length > 0">
       <thead>
         <tr>
           <th>#</th>
